@@ -8,8 +8,9 @@ public class MapFloatIns : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        ReadJson.Instance.TestJson();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

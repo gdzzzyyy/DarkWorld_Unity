@@ -237,6 +237,8 @@
     <Compile Include="Assets\Script\Define.cs" />
     <Compile Include="Assets\Script\Events\EventsManager.cs" />
     <Compile Include="Assets\Script\GAME_ENUM.cs" />
+    <Compile Include="Assets\Script\Map\MapConfigAchieveItem.cs" />
+    <Compile Include="Assets\Script\Map\MapDateJson.cs" />
     <Compile Include="Assets\Script\Map\MapFloatIns.cs" />
     <Compile Include="Assets\Script\Map\MapManager.cs" />
     <Compile Include="Assets\Script\Map\MapSingleDate.cs" />

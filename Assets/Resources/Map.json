@@ -1,0 +1,5 @@
+{
+"1":{"achieve_id":1,"achieve_name":"连胜","achieve_race":3,"achieve_type":41,"achieve_des":"排位赛连续胜利10场","achieve_gold":20,"achieve_times":10,"image":"athletics_2"},
+"2":{"achieve_id":2,"achieve_name":"百战百胜","achieve_race":3,"achieve_type":41,"achieve_des":"排位赛连续胜利100场","achieve_gold":100,"achieve_times":100,"image":"athletics_3"},
+"3":{"achieve_id":3,"achieve_name":"不屈","achieve_race":3,"achieve_type":42,"achieve_des":"排位赛连续失败10场","achieve_gold":5,"achieve_times":10,"image":"athletics_4"}
+}
