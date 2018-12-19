@@ -19,31 +19,41 @@ public class MapManager {
         }
     }
 
-    public List<MapSingleDate> m_AllMapObjList = new List<MapSingleDate>();
+    public Dictionary<int, MapSingleDate> m_allMapInfoDic = new Dictionary<int, MapSingleDate>();//地图每个格子的基本信息 
 
     //通过读表把地图信息加载
-    public void SetMapInfo()
+    public void SetMapInfo(int mapFloorId, MapSingleDate mapSingleDate)
     {
-        for(int row = 0; row < 10; row++)
+        if(m_allMapInfoDic.ContainsKey(mapFloorId))
         {
-            for(int columns = 0; columns < 10; columns++)
-            {
-                //读表之后塞入数据
-                m_AllMapObjList.Add(new MapSingleDate());
-            }
+            m_allMapInfoDic[mapFloorId] = mapSingleDate;
+        }
+        else
+        {
+            m_allMapInfoDic.Add(mapFloorId, mapSingleDate);
         }
     }
 
     //获取地图的完整信息
-    public List<MapSingleDate> GetMapInfo()
+    public Dictionary<int, MapSingleDate> GetMapAllInfo()
     {
-        if (m_AllMapObjList != null && m_AllMapObjList.Count > 0)
+        if (m_allMapInfoDic != null && m_allMapInfoDic.Count > 0)
         {
-            return m_AllMapObjList;
+            return m_allMapInfoDic;
         }
         return null;
     }
 
+    //获取单个id下的地图信息
+    public MapSingleDate GetMapSingleInfoById(int id)
+    {
+        if (m_allMapInfoDic.ContainsKey(id))
+            return m_allMapInfoDic[id];
+        else
+            return null;
+    }
+
+    
     
 	
 }

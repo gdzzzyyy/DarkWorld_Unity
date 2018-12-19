@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ZSZR_DG_GeZi-TY_001
+  m_Shader: {fileID: 4800000, guid: 2de62bc57642953419ae8111796fb500, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BrightnessTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FalloffSampler:
+        m_Texture: {fileID: 2800000, guid: 994278631c26c844bbe5d7f838dc617f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FirstShadow:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairLightRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairSpecularMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HighLightSampler:
+        m_Texture: {fileID: 2800000, guid: a58bd2707954c05488d40c1d5abeab17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c51dff6ae25da8845854ec51e43c3c0b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: bac088d3493863746861f63bd0cc4fc8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RimSampler:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RimTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubShadowSampler:
+        m_Texture: {fileID: 2800000, guid: 0eea3737221742842a7a587bd951bd83, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaHint: 1
+    - _AlphaHintRange: 0
+    - _AlphaHintSpeed: 0
+    - _AlphaMaxDistance: 999
+    - _AlphaMinDistance: 20
+    - _AmbientPower: 0.5
+    - _AmbientReplaceRate: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DestBlend: 0
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EMISSION_FLOW: 0
+    - _EdgeThickness: 15
+    - _FadeDirection: 1
+    - _FadeInDuration: 0.8
+    - _FadeInTick: 0
+    - _FadingAlpha: 1
+    - _Farthest_Distance: 0.5
+    - _FirstRampEdgeSoftness: 35
+    - _FirstRampThras: 0
+    - _FirstShadowUseColorOrMap: 0.5
+    - _ForceX: 0.1
+    - _ForceY: 0.1
+    - _Gloss: 20
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HAIR_SPECULAR: 0
+    - _HeatTime: 0
+    - _HighLight: 0.5
+    - _HighLightFixFactor: 1
+    - _HighLightPower: 0.5
+    - _LightShadeAlpha: 1
+    - _METAL_SPECULAR: 0
+    - _MainHairSpecularOff: 0
+    - _MainHairSpecularSmooth: 10
+    - _MetalSpecularPower: 10
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Outline: 0.0001
+    - _OutlineDepth: 1
+    - _OutlineZOffset: 0
+    - _Outline_Wide_Change_Range: 20
+    - _Parallax: 0.02
+    - _RimBrightThrashold: 0.2
+    - _RimEdgeSoftness: 100
+    - _RimEdgeness: 0.35
+    - _RimIntensity: 0
+    - _RimPower: 0.5
+    - _RimThrashold: 0.5
+    - _RimUseColorOrMap: 0
+    - _SecondaryHairSpecularColorFactor: 0.5
+    - _SecondaryHairSpecularOff: 0
+    - _SecondaryHairSpecularSmooth: 10
+    - _SelectOutLightWidth: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Stencil: 0
+    - _TransparentAlpha: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _AmbientReplaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BrightColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _Color: {r: 0.991, g: 1, b: 1, a: 1}
+    - _Diffuse: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FirstShadowColor: {r: 0.6322514, g: 0.45588237, b: 1, a: 1}
+    - _HairSpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighLightColor: {r: 0, g: 0.38235307, b: 1, a: 1}
+    - _MetalSpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineAdjustColor: {r: 0.2352941, g: 0.2352941, b: 0.2352941, a: 1}
+    - _RimColor: {r: 0.30147058, g: 0.30147058, b: 0.30147058, a: 1}
+    - _SelectOutLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0.65172416, g: 0.536714, b: 0.536714, a: 1}
+    - _Specular: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularFadeColor: {r: 1, g: 1, b: 1, a: 1}

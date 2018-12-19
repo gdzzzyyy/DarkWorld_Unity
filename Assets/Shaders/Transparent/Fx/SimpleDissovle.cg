@@ -1,0 +1,145 @@
+#include "UnityCG.cginc"
+
+sampler2D _MainTex;
+half4 _MainTex_ST;
+
+sampler2D _DissovleTex;
+half4 _DissovleTex_ST;
+
+half4 _DissovleColor;
+half _DissovleRange;
+
+half4 _TintColor;
+//half _Intensity;
+
+float _UOffsetSpeed;
+float _VOffsetSpeed;
+float _UVRotateSpeed;
+
+struct appdata_t {
+    float4 vertex : POSITION;
+    half2 texcoord : TEXCOORD0;
+    half4 color : COLOR;
+};
+
+struct v2f {
+    float4 pos : SV_POSITION;
+    half2 uv : TEXCOORD0;
+	half2 uv1 : TEXCOORD1;
+    half4 colorFactor : COLOR;
+};
+
+v2f vert(appdata_t v) 
+{
+    v2f o;
+
+    float4 inPos = v.vertex;
+            
+    o.pos = UnityObjectToClipPos(inPos);
+    o.uv.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
+	o.uv1.xy = TRANSFORM_TEX(v.texcoord, _DissovleTex);
+
+    o.colorFactor.rgb = v.color.rgb * _TintColor.rgb;
+    o.colorFactor.a = v.color.a;
+
+    return o; 
+}
+
+v2f vert_uvAnim(appdata_t v)
+{
+    v2f o;
+
+    const half TWO_PI = 3.14159 * 2;
+    const half2 VEC_CENTER = half2(0.5h, 0.5h);
+            
+    o.pos = UnityObjectToClipPos (v.vertex);
+    o.uv.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
+
+    float time = _Time.z;
+            
+    float absUVRotSpeed     = abs(_UVRotateSpeed);
+    float absUOffsetSpeed   = abs(_UOffsetSpeed);
+    float absVOffsetSpeed   = abs(_VOffsetSpeed);
+            
+    half2 finaluv =  o.uv.xy;
+	
+    if (absUVRotSpeed > 0)
+    {
+        finaluv -= VEC_CENTER;
+                
+        half rotation = TWO_PI * frac(time * _UVRotateSpeed);
+        half sin_rot = sin(rotation);
+        half cos_rot = cos(rotation);
+                
+        finaluv = half2(
+            finaluv.x * cos_rot - finaluv.y * sin_rot,
+            finaluv.x * sin_rot + finaluv.y * cos_rot);
+                    
+        finaluv += VEC_CENTER;
+    }
+            
+    if (absUOffsetSpeed > 0)
+    {
+        finaluv.x += frac(time * _UOffsetSpeed);
+    }
+    if (absVOffsetSpeed > 0)
+    {
+        finaluv.y += frac(time * _VOffsetSpeed);
+    }
+    o.uv.xy = finaluv;
+	o.uv1.xy = TRANSFORM_TEX(v.texcoord, _DissovleTex);
+
+    o.colorFactor.rgb = v.color.rgb * _TintColor.rgb;
+    o.colorFactor.a = v.color.a;
+            
+    return o; 
+}
+
+half _AlphaThreshold;
+
+half4 frag_particle(v2f i) : SV_Target
+{
+	half vertAlpha = i.colorFactor.a;
+	half4 fadecolor = tex2D(_DissovleTex, i.uv1.xy);
+	half deltaAlpha = fadecolor.r - (_AlphaThreshold + 1 - vertAlpha);
+	clip(deltaAlpha);
+
+	half4 finalColor = tex2D(_MainTex, i.uv.xy);
+
+	if (deltaAlpha < _DissovleRange)
+	{
+		finalColor = half4(
+			_DissovleColor.rgb * _TintColor.rgb,
+			_DissovleColor.a * finalColor.a * vertAlpha);
+	}
+	else
+	{
+		finalColor = finalColor * half4(i.colorFactor.rgb, 1);
+	}
+
+	return finalColor;
+}
+
+half4 frag(v2f i) : SV_Target
+{
+	half vertAlpha = i.colorFactor.a;
+
+	half4 fadecolor = tex2D(_DissovleTex, i.uv1.xy);
+	half deltaAlpha = fadecolor.r - _AlphaThreshold;
+	clip(deltaAlpha);
+	
+	half4 finalColor = tex2D(_MainTex, i.uv.xy);
+
+	if (deltaAlpha < _DissovleRange)
+	{
+		finalColor = half4(
+			_DissovleColor.rgb * _TintColor.rgb,
+			_DissovleColor.a * finalColor.a * vertAlpha);
+	}
+	else
+	{
+		finalColor = finalColor * half4(i.colorFactor.rgb, 1);
+	}
+
+	return finalColor;
+}

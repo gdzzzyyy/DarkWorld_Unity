@@ -42,7 +42,7 @@ public class MapSingleDate
     public int MapBiologyInsId
     {
         get { return m_mapBiologyInsId; }
-        set { m_mapBiologyInsId = m_mapBiologyInsId; }
+        set { m_mapBiologyInsId = value; }
     }
 
 

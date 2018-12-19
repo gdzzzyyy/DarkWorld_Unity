@@ -7,7 +7,7 @@ using SimpleJSON;
 [Serializable]
 public class MapDateJson
 {
-    private Hashtable hash = new Hashtable();
+    private Dictionary<int, MapConfigAchieveItem> hash = new Dictionary<int, MapConfigAchieveItem>();
 
     // 从Json文件中载入信息保存至Hashtable
     public void loadFromJson(JSONNode data)
@@ -16,12 +16,15 @@ public class MapDateJson
             Debug.Log("read faild");
         else
         {
+            int id = 0;
             for (int i = 0; i < data.Count; i++)
             {
                 MapConfigAchieveItem node = new MapConfigAchieveItem();
-                node.Id = data[i]["achieve_id"];
-                Debug.LogError("typeddd =  " + data[i]["achieve_id"].GetType());
-                node.Name = data[i]["achieve_name"];
+                node.Id = id;
+                id++;
+                node.RacePosX = data[i]["x"];
+                node.RacePosY = data[i]["y"];
+                //Debug.LogError("typeddd =  " + data[i]["x"].GetType() + "   data[i][x] = " + data[i]["x"]);
                 hash.Add(node.Id, node);
             }
         }
@@ -32,6 +35,11 @@ public class MapDateJson
     {
         MapConfigAchieveItem itemAchieve = (MapConfigAchieveItem)hash[key];
         return itemAchieve;
+    }
+
+    public Dictionary<int, MapConfigAchieveItem> GetMapDate()
+    {
+        return hash;
     }
 
 }

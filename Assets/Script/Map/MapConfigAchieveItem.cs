@@ -7,8 +7,8 @@ public class MapConfigAchieveItem
 {
     private int _configId = 0;
     private string _configName = "";
-    private string _configX = "";
-    private string _configY = "";
+    private int _configX = 0;
+    private int _configY = 0;
     private string _configImage = "";
 
     public int Id
@@ -23,13 +23,13 @@ public class MapConfigAchieveItem
         set { _configName = value; }
     }
 
-    public string RacePos
+    public int RacePosX
     {
         get { return _configX; }
         set { _configX = value; }
     }
 
-    public string Type
+    public int RacePosY
     {
         get { return _configY; }
         set { _configY = value; }
@@ -44,11 +44,7 @@ public class MapConfigAchieveItem
     public void loadDataFromJson(MapDateJson achieve, int key)
     {
         MapConfigAchieveItem temp = (MapConfigAchieveItem)achieve.GetItem(key);
-
-        _configId = temp.Id;
-        _configName = temp.Name;
-        //_configX = temp.Race;
-        //_configY = temp.Type;
-        //_configImage = temp.Image;
+        _configX = temp.RacePosX;
+        _configY = temp.RacePosY;
     }
 }

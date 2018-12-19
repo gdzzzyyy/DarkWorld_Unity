@@ -51,9 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Define.cs" />
      <Compile Include="Assets\Script\Events\EventsManager.cs" />
+     <Compile Include="Assets\Script\GAME_ENUM.cs" />
+     <Compile Include="Assets\Script\Map\MapConfigAchieveItem.cs" />
+     <Compile Include="Assets\Script\Map\MapDateJson.cs" />
+     <Compile Include="Assets\Script\Map\MapFloatIns.cs" />
      <Compile Include="Assets\Script\Map\MapManager.cs" />
-     <Compile Include="Assets\Script\Map\MapObject.cs" />
+     <Compile Include="Assets\Script\Map\MapSingleDate.cs" />
+     <Compile Include="Assets\Script\ReadJson.cs" />
+     <Compile Include="Assets\Script\ReadJson\SimpleJSON.cs" />
+     <Compile Include="Assets\Script\ReadJson\SimpleJSONBinary.cs" />
+     <Compile Include="Assets\Script\ReadJson\SimpleJSONUnity.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>D:/Sofe/unity20170416f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>

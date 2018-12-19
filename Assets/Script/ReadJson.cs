@@ -21,6 +21,7 @@ public class ReadJson  {
     public Dictionary<string, byte> m_allTableDic = new Dictionary<string, byte>();
     public Hashtable m_allHashMap = new Hashtable();
     public JSONNode m_mapJsonNode = null;
+    public Dictionary<int, MapConfigAchieveItem> m_mapTable = null;
 
     public void ReadJsonForPath()
     {
@@ -47,13 +48,16 @@ public class ReadJson  {
         }
         MapDateJson mapjsondate = new MapDateJson();
         mapjsondate.loadFromJson(m_mapJsonNode);
-        MapConfigAchieveItem jsonItem = mapjsondate.GetItem(1);
-        if (jsonItem == null)
+        m_mapTable = mapjsondate.GetMapDate();
+        foreach (var a in m_mapTable)
         {
-            Debug.LogError("______________________________");
-            return;
+            Debug.LogWarning("a = " + a.Key + " value = " + a.Value.Id);
         }
-        Debug.LogError("id = " + jsonItem.Id + " typeid = " + jsonItem.Id.GetType()  + " name = " + jsonItem.Name + "  nametype = " + jsonItem.Name.GetType());
+    }
+
+    public Dictionary<int, MapConfigAchieveItem> GetMapConfig()
+    {
+        return m_mapTable;
     }
 
 }
