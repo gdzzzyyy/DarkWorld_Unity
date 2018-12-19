@@ -33,11 +33,42 @@ public class UIDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     //感觉这个接口不会有作用
     public void OnDrag(PointerEventData eventData)
     {
+        Vector3 screenSpace = eventData.pressEventCamera.WorldToScreenPoint(transform.position);
+        transform.position = eventData.pressEventCamera.ScreenToWorldPoint(new Vector3(eventData.position.x, eventData.position.y, screenSpace.z));
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         m_canDrag = true;
+        Ray ray = eventData.pressEventCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] rayHit = Physics.RaycastAll(ray);
+        for (int i = 0; i < rayHit.Length; i++)
+        {
+            MapSingle aa = rayHit[i].transform.gameObject.GetComponent<MapSingle>();
+            if (aa != null)
+            {
+                Vector3 zz = Camera.main.ScreenToWorldPoint(eventData.position);
+                if (Math.Abs(zz.x - rayHit[i].transform.position.x) <= 0.5 && Math.Abs(zz.y - rayHit[i].transform.position.y) <= 0.5)
+                {
+                    this.transform.parent = rayHit[i].transform;
+                    this.transform.localPosition = new Vector3(0, 0, -20);
+                    if(aa.mapId != -1)
+                    {
+                        m_nodeId = aa.mapId;
+                        return;
+                    }
+                }
+            }
+        }
+
+        MapSingleDate oldMapSingle = MapManager.Instance.GetMapSingleInfoById(m_nodeId);
+        if(oldMapSingle.MapSingleDateInfo == null)
+        {
+            Debug.LogError("oldmapsingle is null " + m_nodeId);
+            return;
+        }
+        this.transform.parent = oldMapSingle.MapSingleDateInfo.transform;
+        this.transform.localPosition = new Vector3(0, 0, -20);
 
     }
 

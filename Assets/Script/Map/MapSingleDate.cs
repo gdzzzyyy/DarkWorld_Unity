@@ -25,7 +25,7 @@ public class MapSingleDate
     private bool m_mapObjCanWalk;
     public bool MapObjCanWalk
     {
-        get { return m_mapObjCanWalk ; }
+        get { return m_mapObjCanWalk; }
         set { m_mapObjCanWalk = value; }
     }
 
@@ -54,5 +54,11 @@ public class MapSingleDate
         set { m_mapBuff = value; }
     }
 
+    private MapSingle m_mapSingleDate;
+    public MapSingle MapSingleDateInfo
+    {
+        get { return m_mapSingleDate; }
+        set { m_mapSingleDate = value; }
+    }
 
 }

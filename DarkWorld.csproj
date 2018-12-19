@@ -241,6 +241,7 @@
     <Compile Include="Assets\Script\Map\MapDateJson.cs" />
     <Compile Include="Assets\Script\Map\MapFloatIns.cs" />
     <Compile Include="Assets\Script\Map\MapManager.cs" />
+    <Compile Include="Assets\Script\Map\MapSingle.cs" />
     <Compile Include="Assets\Script\Map\MapSingleDate.cs" />
     <Compile Include="Assets\Script\Master\MasterDate.cs" />
     <Compile Include="Assets\Script\Master\MasterManager.cs" />
