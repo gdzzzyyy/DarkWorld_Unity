@@ -19,6 +19,12 @@ public static class GAME_ENUM {
         Cant_Walk,
     }
 
+    public enum Main_State
+    {
+        Main_None,
+        Main_
+    }
+
 
 	
 }

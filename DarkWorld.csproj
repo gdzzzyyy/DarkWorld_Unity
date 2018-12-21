@@ -249,6 +249,7 @@
     <Compile Include="Assets\Script\ReadJson\SimpleJSON.cs" />
     <Compile Include="Assets\Script\ReadJson\SimpleJSONBinary.cs" />
     <Compile Include="Assets\Script\ReadJson\SimpleJSONUnity.cs" />
+    <Compile Include="Assets\Script\SYSTEM_STATE\MainState.cs" />
     <Compile Include="Assets\Script\UIEvent\UIDrag.cs" />
   </ItemGroup>
   <ItemGroup>
